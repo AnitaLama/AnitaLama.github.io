@@ -18,7 +18,6 @@ div.style.width="200px";
 div.style.height="200px";
 div.style.opacity="1";
 div.style.overflow="hidden";
-div.style.background="blue";
 div1.appendChild(div);
 
 previous=document.createElement('button');
@@ -49,26 +48,43 @@ div.appendChild(img);
 var count=0;
 previous.onclick=function(){
 	if(count>0 && count < 5){
+		var i=0;
+	
+	setInterval(function(){
+	if(i<200){
+	var width = parseInt(div.style.width);
+	//console.log(width);
+	div.style.width= (width-1)+"px";
+	//console.log(div.style.width);
 	//console.log(div.getPropertyValue.margin);
 	var left = parseInt(window.getComputedStyle(div).getPropertyValue("margin-left")); 
 	console.log(left);
 	
-	div.style.marginLeft = (left+200)+"px";
+	div.style.marginLeft = (left+1)+"px";
 	console.log(window.getComputedStyle(div).getPropertyValue("margin-left"));
-	var width = parseInt(div.style.width);
-	//console.log(width);
-	div.style.width= (width-200)+"px";
-	//console.log(div.style.width);
+	
+	i++;
+	}},1);
+	
 	count--;
 	}
 }
 next.onclick=function(){
 	if(count<4&& count>=0){
-	var left = parseInt(window.getComputedStyle(div).getPropertyValue("margin-left")); 
-	div.style.marginLeft = (left-200)+"px";
-	console.log(window.getComputedStyle(div).getPropertyValue("margin-left"));
+		var i = 0;
+		
+	setInterval(function(){
+	if(i<200){
 	var width = parseInt(div.style.width);
-	div.style.width= (width+200)+"px";
+	div.style.width= (width+1)+"px";
+	var left = parseInt(window.getComputedStyle(div).getPropertyValue("margin-left")); 
+	div.style.marginLeft = (left-1)+"px";
+	console.log(window.getComputedStyle(div).getPropertyValue("margin-left"));
+	
+	i++;
+	console.log(i);
+	}
+	},1);
 	
 	//console.log(div.style.width);
 	count++;
