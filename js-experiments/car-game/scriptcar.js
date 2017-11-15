@@ -22,8 +22,11 @@ function randomGenerator()
 	{
 		var random= Math.floor(Math.random()*700);
 		//console.log(random);
-		return random;
+		if(random < 200) return 100;
 		
+		if(random < 400) return 300;
+		if(random < 600) return 500;
+		if(random < 700) return 700;
 	}
 
 var background = new Frame();
@@ -113,10 +116,10 @@ function Enemy(){
 		road.appendChild(this.element);
 	 }
 	
-	this.updateEnemyPostion = function(){
+	this.update = function(){
 		var that=this;
 		this.dy=0;		
-		this.dy = this.dy+100;
+		this.dy = this.dy + 100;
 			this.y=this.y+this.dy;
 			this.element.style.top = this.y+"px";
 		}
@@ -125,20 +128,24 @@ function Enemy(){
    car.x + 138 > this.x &&
    car.y < this.y + 100 &&
    300 + car.y > this.y) {
-    alert("OVER");
+    alert("GAME OVER");
 }
 
 		
 }
 
 }
-var obstacles = []; var i = 0;
+var obstacles = []; var i = 0; var count =0;
 setInterval(function(){
+count++;
+if(count == 5){
 var enemy = new Enemy();
 enemy.createEnemy();
 obstacles.push(enemy);
+count = 0;
+}
 	for(var i=0;i<obstacles.length;i++){
-	  obstacles[i].updateEnemyPostion(); 
+	  obstacles[i].update(); 
       obstacles[i].checkCollision();
    }
-},1000);
+},500);
