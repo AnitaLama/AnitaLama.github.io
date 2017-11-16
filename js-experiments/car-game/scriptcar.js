@@ -22,11 +22,11 @@ function randomGenerator()
 	{
 		var random= Math.floor(Math.random()*700);
 		//console.log(random);
-		if(random < 200) return 100;
+		if(random < 200) return 50;
 		
-		if(random < 400) return 300;
-		if(random < 600) return 500;
-		if(random < 700) return 700;
+		if(random < 400) return 250;
+		if(random < 600) return 450;
+		if(random < 700) return 650;
 	}
 
 var background = new Frame();
@@ -77,25 +77,6 @@ function Car(elementID){
 }
 
 
-
-var car = new Car("car");
-document.onkeydown=function(event){
-	switch(event.keyCode){
-		case 37:
-		car.moveLeft();
-		break;
-		
-		case 39:
-		car.moveRight();
-		break;
-		
-		case 38:
-		//bullet
-		//console.log("UP");
-		
-	}
-}
-
 function Enemy(){
 	this.x=randomGenerator();
 	this.y=-100;
@@ -123,6 +104,13 @@ function Enemy(){
 			this.y=this.y+this.dy;
 			this.element.style.top = this.y+"px";
 		}
+		this.removeEnemy = function() {
+				if ((this.y+100)>800){
+					road.removeChild(this.element);
+					obstacles.splice(0,1);
+                }
+	}
+		
 	this.checkCollision = function(){
 		if (car.x < this.x + 100 &&
    car.x + 138 > this.x &&
@@ -130,11 +118,56 @@ function Enemy(){
    300 + car.y > this.y) {
     alert("GAME OVER");
 }
+}
 
+}
+
+function Bullet(){
+var that =this;
+	this.y=0;
+	this.dy=10;
+	this.element = document.createElement('div');
+	this.element.style.height = '10px';
+	this.element.style.width='10px';
+	this.element.style.position = "absolute";
+	this.element.style.background = 'yellow';
+	this.x = (car.x+65);
+	this.y = car.y;
+	this.element.style.left = this.x +'px';
+	this.element.style.top=this.y+'px';
+	// alert(plane.x);
+	road.appendChild(this.element);
+	this.updateBulletPosition = function(){
 		
+		//console.log("update");
+		var t = this.y - this.dy;
+		this.y=t;
+		this.element.style.top=this.y+'px';
+
+	}
+	this.checkBulletCollision = function(obs){
+		if (obs.x < this.x +  10 &&
+   obs.x + 100 > this.x &&
+  obs.y < this.y +10 &&
+  100 + obs.y > this.y) {
+	//	if((obstacleA.x + 100) > this.x && obstacleA.x <= (this.x+10) && (obstacleA.y+70)>this.y+10 && obstacleA.y<=(this.y+10)){
+    		console.log("boom");
+    		road.removeChild(obs.element);
+				road.removeChild(this.element);
+
+    		//remove();
+    		
+    	}
+
+    
+
+	}
+this.remove = function(){
+	road.removeChild(this.element);
 }
 
 }
+
 var obstacles = []; var i = 0; var count =0;
 setInterval(function(){
 count++;
@@ -147,5 +180,37 @@ count = 0;
 	for(var i=0;i<obstacles.length;i++){
 	  obstacles[i].update(); 
       obstacles[i].checkCollision();
+      obstacles[i].checkBulletCollision();
+
    }
 },500);
+
+
+var car = new Car("car");
+document.onkeydown=function(event){
+	switch(event.keyCode){
+		case 37:
+		car.moveLeft();
+		break;
+		
+		case 39:
+		car.moveRight();
+		break;
+		
+		case 38:
+		var bullet = new Bullet();
+		setInterval(function(){
+			
+			bullet.updateBulletPosition();
+			for(var i=0;i<100;i++){
+				//console.log(obstacles[i]);
+	 		 	bullet.checkBulletCollision(obstacles[i]);
+   			}
+		},10);
+		break;
+		
+		//bullet.checkBulletCollision()
+		//console.log("UP");
+		
+	}
+}
