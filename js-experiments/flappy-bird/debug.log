@@ -1,6 +1,0 @@
-[1115/133202.224:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\Cansuck\reports: Access is denied. (0x5)
-[1115/133202.235:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
-[1115/133202.237:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\Cansuck\reports: Access is denied. (0x5)
-[1123/080542.093:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\Cansuck\reports: Access is denied. (0x5)
-[1123/080542.100:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
-[1123/080542.102:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\Cansuck\reports: Access is denied. (0x5)
