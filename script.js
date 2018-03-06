@@ -1,69 +1,70 @@
-var data = [
-   {
-       tagName: 'div',
-       className: 'test-class',
-       styles: {
-          width: "100px",
-           height: "100px",
-           backgroundColor: 'red'
-       },
-   },
-      { children: [
-           {
-               tagName: 'div',
-               className: 'box',
-               styles: {
-                   width: "50px",
-                   height: "50px",
-                   backgroundColor: 'blue'
-               },
-           },
-           {
-               tagName: 'div',
-               className: 'box',
-               styles: {
-                   width: "50px",
-                   height: "50px",
-                   backgroundColor: 'brown',
-                   float: 'right'
-               },
-           }
-       ]
-   }
-];
-var main = document.getElementById('main');
-
-	 //console.log(data.length);
-for(var i=0; i<data.length; i++){
-	if(i == 0){
-		var tagParent = document.createElement(data[0].tagName);
-		tagParent.class=data[0].className;
-		
-		for(styles in data[0].styles){
-		  //console.log(styles);
-		   tagParent.style[styles] = data[0].styles[styles];
-		}
-		main.appendChild(tagParent);
-		}
-	var j = i;
-	if(i > 0){
-		var j = 0;
-		while(j < data[i].children.length){
-			//console.log(data[i].children.length);
-			var tag = document.createElement(data[i].children[j].tagName);
-			tag.class=data[i].children[j].className;
-			console.log(tagParent);
-			tagParent.appendChild(tag);
-			for(styles in data[i].children[1].styles){
-			  console.log(styles);
-			   tag.style[styles] = data[i].children[j].styles[styles];
-			}
-			j++;
-			 
-		}
+// JavaScript Document
+myFile = { FirstName:"Anita",
+		 LastName:"Lama", 
+		 phone:"9818981898",
+		 email:"anitalama07@gmail.com",
+		 address:"Ktm", 
+		 age:22,
+		 interests:["listening music","reading books","watching anime"],
+		 education:{
+			 Bachelor:"BSc. CSIT from Madan Bhandari Memorial College",
+				plusTwo: "WhiteGold H.S.S. (2013)",
+				school: "Rosebud School (2010)"
+				},
+		skills:["C","C++","Java","PHP","JS","MySql","Oracle","Microsoft Products"],
 	
-	 
-	 
+		 };
+		 
+		 
+var head=document.getElementById("main-wrapper");
+
+head.style.width="500px";
+head.style.margin="0 auto";
+head.style.textAlign="center";
+head.innerHTML +=myFile.FirstName+" "+myFile.LastName+"<br>";
+head.innerHTML +=("+977 ")+myFile.phone+"<br>";
+head.innerHTML +=myFile.email+"<hr>";
+
+var x=document.createElement("div");
+x.style.textAlign="left";
+x.innerHTML +=("Address : ")+myFile.address+"<br>";
+x.innerHTML +=("Age : ")+myFile.age+"<br>";
+x.innerHTML +=("Interests : ");
+//create a list
+var ul=document.createElement('ul');
+ul.style.listStyleType="none";
+ul.style.listStylePosition="outside";
+ul.style.margin="0px";
+x.appendChild(ul);
+for (var i=0; i<myFile.interests.length; i++){
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML+=myFile.interests[i];
 }
-	   
+x.innerHTML +=("Education : ")+"<br>";
+var ul=document.createElement('ul');
+
+x.appendChild(ul);
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML+=("Bachelor : ")+myFile.education.Bachelor;
+	var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML+=("High School : ")+myFile.education.plusTwo;
+    var li=document.createElement('li');
+    ul.appendChild(li);
+	li.innerHTML+=("Secondary School : ")+myFile.education.school;
+	
+
+x.innerHTML +=("Computer Skills : ");
+var ul=document.createElement('ul');
+ul.style.listStyleType="none";
+x.appendChild(ul);
+ul.style.margin="0px";
+
+for (var i=0; i<myFile.skills.length; i++){
+    var li=document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML+=myFile.skills[i];
 }
+head.appendChild(x);
