@@ -4,14 +4,14 @@ myFile = { FirstName:"Anita",
 		 phone:"9818981898",
 		 email:"anitalama07@gmail.com",
 		 address:"Ktm", 
-		 age:22,
+		 age:23,
 		 interests:["listening music","reading books","watching anime"],
 		 education:{
 			 Bachelor:"BSc. CSIT from Madan Bhandari Memorial College",
 				plusTwo: "WhiteGold H.S.S. (2013)",
 				school: "Rosebud School (2010)"
 				},
-		skills:["C","C++","Java","PHP","JS","MySql","Oracle","Microsoft Products"],
+		skills:["C","C++","Java","PHP","JS","React JS","MySql","Oracle","Microsoft Products"],
 	
 		 };
 		 
