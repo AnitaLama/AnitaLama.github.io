@@ -1,0 +1,17 @@
+@media only screen and (max-width:768px){
+
+
+.header, .footer, .main {
+	width: 100%;
+}
+#notTransliterated, #transliterated{
+	width : 100%;
+}
+
+#notTransliteratedTextArea, #transliteratedTextArea{
+	width :80%;
+}
+.header img{
+	width:100%;
+}
+}
