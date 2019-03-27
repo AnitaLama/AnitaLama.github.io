@@ -40,6 +40,13 @@ body{
   font-weight: bold;
 
 }
+.title span{
+  font-size: 14px;
+  font-weight: 200
+}
+.subtitle{
+  font-style: italic;
+}
 .section {
   padding: 20px;
   /*border: 1px solid brown;*/
@@ -64,8 +71,12 @@ body{
 .skills .skill .skill60 {
   width: 60%;
 }
-.about-me span {
+.about-me span{
+  display: block
+}
+.about-me span.main {
   display: block;
+  text-align: justify;
 }
 .educations ul li{
   
@@ -82,7 +93,7 @@ body{
 }
 #path0, #path1, #path2, #path3, #path4 {
   stroke-dasharray: 100;
-  animation: dash 5s linear forwards alternate infinite;
+  animation: dash 3s linear forwards alternate infinite;
 }
  
   @keyframes dash {
