@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="style.css">
+</head>
+<body>
+<div class="main-container">
+
+<div id="particles-js">
+		<div class = "header"> <span class="header-name">ANITA LAMA </span></div>
+
+
+</div>
+<div class="section">
+	<div class='content'>
+		<div class="content-header">Personal Info</div>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Anita Lama</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>anitalama07@gmail.com</td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td>Ktm</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</div>
+
+<script src="particles.js"></script>
+<script src="script.js"></script>
+
+<script src="js/lib/stats.js"></script>
+<script>
+  var stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+body{
+  color:#3f3a35;
+}
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.main-container {
+  /*min-height: 100vh;*/
+}
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.header .container{
+  padding: 0;
+}
+.header {
+  background: #635a51;
+  /*height: 200px;*/
+}
+.body-left-col {
+  width: 30%;
+  float: left;
+}
+.body-right-col {
+  width: 65%;
+  margin-left:5%; 
+  float: left;
+}
+.title {
+  font-size: 22px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  font-weight: bold;
+
+}
+.section {
+  padding: 20px;
+  /*border: 1px solid brown;*/
+}
+.skills .skill {
+  padding: 4px 0;
+}
+.skills .skill div {
+  height: 10px;
+  background: #635a51;
+  margin: 4px 0;
+}
+.skills .skill .skill70 {
+  width: 70%;
+}
+.skills .skill .skill80 {
+  width: 80%;
+}
+.skills .skill .skill90 {
+  width: 90%;
+}
+.skills .skill .skill60 {
+  width: 60%;
+}
+.about-me span {
+  display: block;
+}
+.educations ul li{
+  
+}
+.education span{
+  font-weight: bold;
+}
+.experience .title{
+  padding-bottom: 0;
+  font-weight: 400
+}
+.float-left{
+  float:left;
+}
+#path0, #path1, #path2, #path3, #path4 {
+  stroke-dasharray: 100;
+  animation: dash 5s linear forwards alternate infinite;
+}
+ 
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 320;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+.header .description{
+    width: 70%;
+
+    padding:50px 0;
+    
+}
+.header svg{
+  margin-bottom: 20px;
+}
+  .header .description .about-me{
+    text-align: center;
+    color: white;
+    
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+ .header .description .about-me span{
+    line-height:30px;
+  }

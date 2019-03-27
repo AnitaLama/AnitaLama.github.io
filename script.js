@@ -1,70 +1,120 @@
-// JavaScript Document
-myFile = { FirstName:"Anita",
-		 LastName:"Lama", 
-		 phone:"9818981898",
-		 email:"anitalama07@gmail.com",
-		 address:"Ktm", 
-		 age:23,
-		 interests:["listening music","reading books","watching anime"],
-		 education:{
-			 Bachelor:"BSc. CSIT from Madan Bhandari Memorial College",
-				plusTwo: "WhiteGold H.S.S. (2013)",
-				school: "Rosebud School (2010)"
+particlesJS(
+	"particles-js",
+
+	{
+		particles: {
+			number: {
+				value: 80,
+				density: {
+					enable: true,
+					value_area: 800
+				}
+			},
+			color: {
+				value: "#ffffff"
+			},
+			shape: {
+				type: "circle",
+				stroke: {
+					width: 0,
+					color: "#000000"
 				},
-		skills:["C","C++","Java","PHP","JS","React JS","MySql","Oracle","Microsoft Products"],
-	
-		 };
-		 
-		 
-var head=document.getElementById("main-wrapper");
-
-head.style.width="500px";
-head.style.margin="0 auto";
-head.style.textAlign="center";
-head.innerHTML +=myFile.FirstName+" "+myFile.LastName+"<br>";
-head.innerHTML +=("+977 ")+myFile.phone+"<br>";
-head.innerHTML +=myFile.email+"<hr>";
-
-var x=document.createElement("div");
-x.style.textAlign="left";
-x.innerHTML +=("Address : ")+myFile.address+"<br>";
-x.innerHTML +=("Age : ")+myFile.age+"<br>";
-x.innerHTML +=("Interests : ");
-//create a list
-var ul=document.createElement('ul');
-ul.style.listStyleType="none";
-ul.style.listStylePosition="outside";
-ul.style.margin="0px";
-x.appendChild(ul);
-for (var i=0; i<myFile.interests.length; i++){
-    var li=document.createElement('li');
-    ul.appendChild(li);
-    li.innerHTML+=myFile.interests[i];
-}
-x.innerHTML +=("Education : ")+"<br>";
-var ul=document.createElement('ul');
-
-x.appendChild(ul);
-    var li=document.createElement('li');
-    ul.appendChild(li);
-    li.innerHTML+=("Bachelor : ")+myFile.education.Bachelor;
-	var li=document.createElement('li');
-    ul.appendChild(li);
-    li.innerHTML+=("High School : ")+myFile.education.plusTwo;
-    var li=document.createElement('li');
-    ul.appendChild(li);
-	li.innerHTML+=("Secondary School : ")+myFile.education.school;
-	
-
-x.innerHTML +=("Computer Skills : ");
-var ul=document.createElement('ul');
-ul.style.listStyleType="none";
-x.appendChild(ul);
-ul.style.margin="0px";
-
-for (var i=0; i<myFile.skills.length; i++){
-    var li=document.createElement('li');
-    ul.appendChild(li);
-    li.innerHTML+=myFile.skills[i];
-}
-head.appendChild(x);
+				polygon: {
+					nb_sides: 5
+				},
+				image: {
+					src: "img/github.svg",
+					width: 100,
+					height: 100
+				}
+			},
+			opacity: {
+				value: 0.5,
+				random: false,
+				anim: {
+					enable: false,
+					speed: 1,
+					opacity_min: 0.1,
+					sync: false
+				}
+			},
+			size: {
+				value: 5,
+				random: true,
+				anim: {
+					enable: false,
+					speed: 40,
+					size_min: 0.1,
+					sync: false
+				}
+			},
+			line_linked: {
+				enable: true,
+				distance: 150,
+				color: "#ffffff",
+				opacity: 0.4,
+				width: 1
+			},
+			move: {
+				enable: true,
+				speed: 6,
+				direction: "none",
+				random: false,
+				straight: false,
+				out_mode: "out",
+				attract: {
+					enable: false,
+					rotateX: 600,
+					rotateY: 1200
+				}
+			}
+		},
+		interactivity: {
+			detect_on: "canvas",
+			events: {
+				onhover: {
+					enable: true,
+					mode: "repulse"
+				},
+				onclick: {
+					enable: true,
+					mode: "push"
+				},
+				resize: true
+			},
+			modes: {
+				grab: {
+					distance: 400,
+					line_linked: {
+						opacity: 1
+					}
+				},
+				bubble: {
+					distance: 400,
+					size: 40,
+					duration: 2,
+					opacity: 8,
+					speed: 3
+				},
+				repulse: {
+					distance: 200
+				},
+				push: {
+					particles_nb: 4
+				},
+				remove: {
+					particles_nb: 2
+				}
+			}
+		},
+		retina_detect: true,
+		config_demo: {
+			hide_card: false,
+			background_color: "#b61924",
+			background_image: "",
+			background_position: "50% 50%",
+			background_repeat: "no-repeat",
+			background_size: "cover"
+		}
+	}
+);
