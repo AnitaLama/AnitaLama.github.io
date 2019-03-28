@@ -61,15 +61,26 @@ body{
 }
 .skills .skill .skill70 {
   width: 70%;
+  transition: 2s width
+
 }
 .skills .skill .skill80 {
   width: 80%;
+  transition: 2s width
+
 }
 .skills .skill .skill90 {
   width: 90%;
+  transition: 2s width
+
 }
 .skills .skill .skill60 {
   width: 60%;
+  transition: 2s width 
+
+}
+.skills .skill .skill60:hover, .skills .skill .skill70:hover, .skills .skill .skill80:hover, .skills .skill .skill90:hover{
+  width: 25%;
 }
 .about-me span{
   display: block
